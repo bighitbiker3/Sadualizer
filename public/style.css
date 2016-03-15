@@ -1,0 +1,26 @@
+body {
+  background-color: #000;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #FFF;
+}
+
+a {
+  color: #00B7FF;
+}
+#graph {
+  z-index: 10;
+}
+#buttons {
+  margin-left: 300px;
+}
+
+#lows-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  background-color: transparent;
+
+
+}
