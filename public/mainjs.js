@@ -9,12 +9,11 @@ $(document).ready(function(){
   console.log('sampleRate', sampleRate);
 
 
-  //Bind the analyser to the media src element
   audioSrc.connect(analyser);
   audioSrc.connect(audioCtx.destination);
   audioSrc.crossOrigin = "anonymous";
 
-  var frequencyData = new Uint8Array(1024);
+  var frequencyData = new Uint8Array(950);
   var frequencySpread = sampleRate/(frequencyData.length*2)
   console.log('frequencySpread', frequencySpread)
 
