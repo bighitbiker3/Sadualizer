@@ -1,5 +1,14 @@
 $(document).ready(function(){
-
+  //Button actions to choose song
+  $('li').click(function(){
+    var audio = document.getElementById('audioElement')
+    audio.src = $(this).data('songtype');
+    audio.pause();
+    audio.load();
+    console.log('this.name', $(this).data('songtype'));
+    console.log(audio.src)
+  })
+  //Shit for visualizer n Web API
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   var audioElement = document.getElementById('audioElement');
   var audioSrc = audioCtx.createMediaElementSource(audioElement);

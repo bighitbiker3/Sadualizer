@@ -13,6 +13,11 @@ a {
 #buttons {
   margin-left: 300px;
 }
+#songChoice{
+  float: left;
+  margin-right: 15px;
+  margin-top: -20px;
+}
 
 #lows-bottom {
   position: absolute;

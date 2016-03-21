@@ -6,23 +6,34 @@
     <title>Visualizer</title>
     <link rel="stylesheet" href="application.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   </head>
 
   <body>
     <audio id="audioElement" src="audio/idktrap.mp3"></audio>
-    <div id="lows-bottom"></div>
-    <div id="low-mids-bottom"></div>
-    <div id="mids-bottom"></div>
-    <div id="mid-highs-bottom"></div>
-    <div id="highs-bottom"></div>
+
 
 <div id="buttons">
-  <button onclick="document.getElementById('audioElement').play()">Play the Audio</button>
-  <button onclick="document.getElementById('audioElement').pause()">Pause the Audio</button>
+  <button class="btn btn-default" onclick="document.getElementById('audioElement').play()">Play the Audio</button>
+  <button class="btn btn-default" onclick="document.getElementById('audioElement').pause()">Pause the Audio</button>
+</div>
+<div id="songChoice">
+  <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    song :( <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li data-songtype="audio/missingperson.mp3"><a>bladee - missing person</a></li>
+    <li data-songtype="audio/fridayNite.mp3"><a >bladee - friday nite</a></li>
+    <li data-songtype="audio/idktrap.mp3"><a >duvet - idktrap</a></li>
+    <li data-songtype="audio/yungLean_yoshiCity.mp3"><a >yung lean - yoshi city</a></li>
+  </ul>
+</div>
 </div>
 
     <div id="graph"></div>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="mainjs.js"></script>
   </body>
