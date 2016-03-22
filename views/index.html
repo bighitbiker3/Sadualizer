@@ -6,6 +6,7 @@
     <title>Visualizer</title>
     <link rel="stylesheet" href="application.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   </head>
 
@@ -14,21 +15,27 @@
 
 
 <div id="buttons">
-  <button class="btn btn-default" onclick="document.getElementById('audioElement').play()">Play the Audio</button>
-  <button class="btn btn-default" onclick="document.getElementById('audioElement').pause()">Pause the Audio</button>
+  <i class="fa fa-play-circle fa-2x" onclick="document.getElementById('audioElement').play()"></i>
+  <i class="fa fa-pause-circle fa-2x" onclick="document.getElementById('audioElement').pause()"></i>
 </div>
 <div id="songChoice">
   <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    song :( <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li data-songtype="audio/missingperson.mp3"><a>bladee - missing person</a></li>
-    <li data-songtype="audio/fridayNite.mp3"><a >bladee - friday nite</a></li>
-    <li data-songtype="audio/idktrap.mp3"><a >duvet - idktrap</a></li>
-    <li data-songtype="audio/yungLean_yoshiCity.mp3"><a >yung lean - yoshi city</a></li>
-  </ul>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      song :( <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li data-songtype="audio/missingperson.mp3"><a class="songListing">bladee - missing person</a></li>
+      <li data-songtype="audio/fridayNite.mp3"><a >bladee - friday nite</a></li>
+      <li data-songtype="audio/idktrap.mp3"><a >duvet - idktrap</a></li>
+      <li data-songtype="audio/yungLean_yoshiCity.mp3"><a >yung lean - yoshi city</a></li>
+    </ul>
+  </div>
 </div>
+<div class="form-group">
+  <input id="frequencyChoice" placeholder="your saddest frequency (0-20000)"></input>
+</div>
+<div class="sadFace">
+  <i class="fa fa-frown-o fa-5x"></i>
 </div>
 
     <div id="graph"></div>

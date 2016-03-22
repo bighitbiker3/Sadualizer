@@ -1,5 +1,6 @@
 $(document).ready(function(){
   //Button actions to choose song
+
   $('li').click(function(){
     var audio = document.getElementById('audioElement')
     audio.src = $(this).data('songtype');
@@ -8,6 +9,14 @@ $(document).ready(function(){
     console.log('this.name', $(this).data('songtype'));
     console.log(audio.src)
   })
+
+  //sadFrequency
+  var frequencyChoice = 17000
+  $('#frequencyChoice').keyup(function(){
+   frequencyChoice = $(this).val();
+    console.log('frequencychoice', frequencyChoice)
+  })
+
   //Shit for visualizer n Web API
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   var audioElement = document.getElementById('audioElement');
@@ -22,12 +31,12 @@ $(document).ready(function(){
   audioSrc.connect(audioCtx.destination);
   audioSrc.crossOrigin = "anonymous";
 
-  var frequencyData = new Uint8Array(950);
+  var frequencyData = new Uint8Array(800);
   var frequencySpread = sampleRate/(frequencyData.length*2)
   console.log('frequencySpread', frequencySpread)
 
   var svgWidth = 1200;
-  var svgHeight = 800
+  var svgHeight = 510
 
   var sampleSVG = d3.select("#graph")
         .append("svg")
@@ -37,7 +46,7 @@ $(document).ready(function(){
   sampleSVG.selectAll("circle")
         .data(frequencyData)
         .enter().append("circle")
-        .attr("r", 0.4)
+        .attr("r", 0.5)
         .attr("cx", function(d, i){
           return i * (svgWidth / frequencyData.length)
         })
@@ -50,7 +59,6 @@ $(document).ready(function(){
 
 
   function renderChart() {
-
     requestAnimationFrame(renderChart);
 
     analyser.getByteFrequencyData(frequencyData);
@@ -61,11 +69,12 @@ $(document).ready(function(){
     sampleSVG.selectAll('circle')
       .data(frequencyData)
       .attr('cy', function(d){
-        return 500 - d;
+        return 510 - d*2;
       })
       .style('fill', 'white');
 
     $('body').css('background-color', 'rgba(0, 0, ' + correspondingFreq(15000) + ', 1)');
+    $('.fa-frown-o').css('opacity', correspondingFreq(frequencyChoice)/200);
   };
   renderChart();
 });

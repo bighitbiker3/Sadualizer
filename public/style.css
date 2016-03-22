@@ -8,17 +8,52 @@ a {
   color: #00B7FF;
 }
 #graph {
+  position: absolute;
+  bottom: 75px;
   z-index: 10;
 }
 #buttons {
-  margin-left: 300px;
+  position: absolute;
+  top: 10px;
+  left: 275px;
+  color: white;
 }
 #songChoice{
-  float: left;
-  margin-right: 15px;
-  margin-top: -20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
-
+.dropdown-menu a{
+    color: #FFFFFF !important;
+    background-color: black !important;
+}
+.dropdown-toggle{
+  color: #FFFFFF !important;
+  background-color: black !important;
+}
+.btn-default{
+  color: #FFFFFF !important;
+  background-color: black !important;
+}
+input{
+  position: absolute;
+  top: 8px;
+  left: 100px;
+  background-color: black;
+}
+input, select, textarea{
+    color: #ff0000;
+}
+.sadFace{
+  position: absolute;
+  text-align: center;
+  top: 300px;
+  right: 50vw
+}
+.fa-frown-o{
+  color: #FFF;
+  text-align: center;
+}
 #lows-bottom {
   position: absolute;
   bottom: 0;
