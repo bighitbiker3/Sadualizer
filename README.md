@@ -3,4 +3,4 @@ Simple audio visualizer...Will add as many SBEGTBSGDG songs as I legally can to 
 
 Still a work in progress. 
 
-(http://sadualizer.herokuapp.com/_
+http://sadualizer.herokuapp.com/
